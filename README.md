@@ -10,8 +10,6 @@
 - [交流](#交流)
 - [安装](#安装)
 - [使用](#使用)
-- [Credits](#credits)
-- [License](#license)
 
 # 要求
 *  iOS 8.0+ / Mac OS X 10.11+ / tvOS 9.0+
