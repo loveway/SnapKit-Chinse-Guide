@@ -32,7 +32,7 @@
 ```
 $ gem install cocoapods
 ```
-> SnapKit 3.0.0+ 需要 CocoaPods 版本在 1.1.0 以上
+> SnapKit 3.0.0+ 需要 CocoaPods 版本是 1.1.0 以上
 
 为了使用 CocoaPods 能把 SnapKit 完整的安装到你的项目中，需要把下面内容加入到你的 `Podfile` 中：
 ```
