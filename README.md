@@ -158,7 +158,7 @@ make.left.equalTo(view).offset(UIEdgeInsetsMake(10, 0, 10, 0))
 ```
 make.top.equalTo(label.snp.top).priority(600)
 ```
-###Composition, composition, composition
+###一些组合
 
 SnapKit 还提供了一些便利的方法来同时创建多个约束。
 
@@ -193,7 +193,7 @@ make.center.equalTo(superview).offset(CGPoint(x: -5, y: 10))
 make.left.right.bottom.equalTo(superview)
 make.top.equalTo(otherView)
 ```
-###Hold on for dear life
+###更多的选择
 有时候为了动画或者删除、替换约束，你需要修改现有的约束。SnapKit 提供了一些不同的方法来更新约束。
 
 #####1. References
