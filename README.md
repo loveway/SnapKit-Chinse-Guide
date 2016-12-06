@@ -61,6 +61,7 @@ $ brew install carthage
 github "SnapKit/SnapKit" ~> 3.0
 ```
 运行 `carthage update` 编译你的 framework ，然后把 `SnapKit.framework`拖进你的项目中。
+
 ###Manually
 如果你不喜欢上述的依赖管理，你可以手动地把 SnapKit 集成到你的项目中。
 
@@ -97,10 +98,12 @@ box.snp.makeConstraints { (make) -> Void in
 
 ###并不是所有的都只能用 equal
 
-> `.equalTo` 等同于 **NSLayoutRelation.Equal**
-    `.lessThanOrEqualTo` 等同于 **NSLayoutRelation.LessThanOrEqual**
-    `.greaterThanOrEqualTo` 等同于 **NSLayoutRelation.GreaterThanOrEqual**
+> `.equalTo` 等同于 **NSLayoutRelation.Equal** 
 
+>  `.lessThanOrEqualTo` 等同于 **NSLayoutRelation.LessThanOrEqual**
+
+>  `.greaterThanOrEqualTo` 等同于 **NSLayoutRelation.GreaterThanOrEqual**
+   
 以上是接受一个参数的约束，下面的这些中任意一个也都可以：
 #####1. ViewAttribute
 ```
@@ -108,18 +111,18 @@ make.centerX.lessThanOrEqualTo(view2.snp.left)
 ```
 
  ViewAttribute              | NSLayoutAttribute | 
- --------------------------|-----------------------------------------| 
- view.snp.left                 | NSLayoutAttribute.left 
- view.snp.right              | NSLayoutAttribute.right 
- view.snp.top                 | NSLayoutAttribute.top 
- view.snp.bottom          | NSLayoutAttribute.bottom 
- view.snp.leading          | NSLayoutAttribute.leading 
+ ---------------------------|-------------------------------| 
+ view.snp.left              | NSLayoutAttribute.left 
+ view.snp.right             | NSLayoutAttribute.right 
+ view.snp.top               | NSLayoutAttribute.top 
+ view.snp.bottom            | NSLayoutAttribute.bottom 
+ view.snp.leading           | NSLayoutAttribute.leading 
  view.snp.trailing          | NSLayoutAttribute.trailing 
  view.snp.width             | NSLayoutAttribute.width 
  view.snp.height            | NSLayoutAttribute.height 
- view.snp.centerX         | NSLayoutAttribute.centerX 
- view.snp.centerY          | NSLayoutAttribute.centerY 
- view.snp.lastBaseline  | NSLayoutAttribute.lastBaseline
+ view.snp.centerX           | NSLayoutAttribute.centerX 
+ view.snp.centerY           | NSLayoutAttribute.centerY 
+ view.snp.lastBaseline      | NSLayoutAttribute.lastBaseline
 
 #####2. UIView/NSView
 如果你想让 view.left 大于或等于 label.left ：
@@ -176,7 +179,7 @@ make.size.greaterThanOrEqualTo(titleLabel)
 // make width = superview.width + 100, height = superview.height - 50
 make.size.equalTo(superview).offset(CGSize(width: 100, height: -50))
 ```
-######center
+#####center
 ```
 // make centerX and centerY = button1
 make.center.equalTo(button1)
