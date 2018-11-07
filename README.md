@@ -28,6 +28,7 @@
 
 # 安装
 ###CocoaPods
+
 [CocoaPods](http://cocoapods.org/) 是第三方的管理库。你可以使用下面的命令安装：
 ```
 $ gem install cocoapods
