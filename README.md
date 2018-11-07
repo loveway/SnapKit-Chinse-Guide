@@ -27,8 +27,7 @@
 * 如果你想贡献一份自己的力量，你可以提交一个 pull 请求。
 
 # 安装
-###CocoaPods
-
+### CocoaPods
 [CocoaPods](http://cocoapods.org/) 是第三方的管理库。你可以使用下面的命令安装：
 ```
 $ gem install cocoapods
@@ -49,7 +48,7 @@ end
 ```
 $ pod install
 ```
-###Carthage
+### Carthage
 [Carthage](https://github.com/Carthage/Carthage) 是一个会编译每个依赖框架，然后提供二进制文件的去中心化依赖管理器。
 
 你可以使用  [Homebrew](http://brew.sh/) 用以下命令安装 Carthage ：
@@ -63,7 +62,7 @@ github "SnapKit/SnapKit" ~> 3.0
 ```
 运行 `carthage update` 编译你的 framework ，然后把 `SnapKit.framework`拖进你的项目中。
 
-###Manually
+### Manually
 如果你不喜欢上述的依赖管理，你可以手动地把 SnapKit 集成到你的项目中。
 
 # 使用
@@ -97,7 +96,7 @@ box.snp.makeConstraints { (make) -> Void in
 * 追踪约束，以便以后能简单的移除。
 * 在适当的视图上确保 `setTranslatesAutoresizingMaskIntoConstraints(false) ` 的调用。
 
-###并不是所有的都只能用 equal
+### 并不是所有的都只能用 equal
 
 > `.equalTo` 等同于 **NSLayoutRelation.Equal** 
 
@@ -106,7 +105,7 @@ box.snp.makeConstraints { (make) -> Void in
 >  `.greaterThanOrEqualTo` 等同于 **NSLayoutRelation.GreaterThanOrEqual**
    
 以上是接受一个参数的约束，下面的这些中任意一个也都可以：
-#####1. ViewAttribute
+##### 1. ViewAttribute
 ```
 make.centerX.lessThanOrEqualTo(view2.snp.left)
 ```
@@ -132,7 +131,7 @@ make.centerX.lessThanOrEqualTo(view2.snp.left)
 make.left.greaterThanOrEqualTo(label)
 make.left.greaterThanOrEqualTo(label.snp.left)
 ```
-#####3. Strict Checks
+##### 3. Strict Checks
 Auto Layout 允许你把宽高设置成一个常量。如果你想设置一个 view 宽度的最大值和最小值，你可以像下面这样：
 ```
 // width >= 200 && width <= 400
@@ -152,7 +151,7 @@ make.size.equalTo(CGSize(width: 50, height: 100))
 make.edges.equalTo(UIEdgeInsetsMake(10, 0, 10, 0))
 make.left.equalTo(view).offset(UIEdgeInsetsMake(10, 0, 10, 0))
 ```
-###优先级
+### 优先级
 > `.priority`允许你来指定明确的优先级
 
 优先级可以写在约束链的末尾，如下：
@@ -163,7 +162,7 @@ make.top.equalTo(label.snp.top).priority(600)
 
 SnapKit 还提供了一些便利的方法来同时创建多个约束。
 
-#####edges
+##### edges
 ```
 // make top, left, bottom, right equal view2
 make.edges.equalTo(view2)
@@ -172,7 +171,7 @@ make.edges.equalTo(view2)
 // bottom = superview.bottom - 15, right = superview.right - 20
 make.edges.equalTo(superview).inset(UIEdgeInsetsMake(5, 10, 15, 20))
 ```
-#####size
+##### size
 ```
 // make width and height greater than or equal to titleLabel
 make.size.greaterThanOrEqualTo(titleLabel)
@@ -180,7 +179,7 @@ make.size.greaterThanOrEqualTo(titleLabel)
 // make width = superview.width + 100, height = superview.height - 50
 make.size.equalTo(superview).offset(CGSize(width: 100, height: -50))
 ```
-#####center
+##### center
 ```
 // make centerX and centerY = button1
 make.center.equalTo(button1)
@@ -194,10 +193,10 @@ make.center.equalTo(superview).offset(CGPoint(x: -5, y: 10))
 make.left.right.bottom.equalTo(superview)
 make.top.equalTo(otherView)
 ```
-###更多的选择
+### 更多的选择
 有时候为了动画或者删除、替换约束，你需要修改现有的约束。SnapKit 提供了一些不同的方法来更新约束。
 
-#####1. References
+##### 1. References
 你可以通过约束的 make 表达式将局部变量或者类属性的约束结果分配给一个指定的约束。你也可以通过将它们存在数组中来引用多个约束。
 ```
 var topConstraint: Constraint? = nil
@@ -217,7 +216,7 @@ self.topConstraint.uninstall()
 // or if you want to update the constraint
 self.topConstraint.updateOffset(5)
 ```
-#####2. snp.updateConstraints
+##### 2. snp.updateConstraints
 如果你只是想更新约束的值，你可以使用 `snp.updateConstraints` 方法来替代 `snp.makeConstraints`
 ```
 // this is Apple's recommended place for adding/updating constraints
@@ -236,7 +235,7 @@ override func updateConstraints() {
      super.updateConstraints()
 }
 ```
-#####3. snp.remakeConstraints
+##### 3. snp.remakeConstraints
 `snp.remakeConstraints` 和 ` snp.makeConstraints` 类似。不同的是，使用`snp.remakeConstraints` 需要先删除 SnapKit 安装的所有约束。
 ```
 func changeButtonPosition() { 
