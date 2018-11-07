@@ -124,7 +124,7 @@ make.centerX.lessThanOrEqualTo(view2.snp.left)
  view.snp.centerY           | NSLayoutAttribute.centerY 
  view.snp.lastBaseline      | NSLayoutAttribute.lastBaseline
 
-#####2. UIView/NSView
+##### 2. UIView/NSView
 如果你想让 view.left 大于或等于 label.left ：
 ```
 // these two constraints are exactly the same 这两个约束是完全一样的
@@ -158,7 +158,7 @@ make.left.equalTo(view).offset(UIEdgeInsetsMake(10, 0, 10, 0))
 ```
 make.top.equalTo(label.snp.top).priority(600)
 ```
-###一些组合
+### 一些组合
 
 SnapKit 还提供了一些便利的方法来同时创建多个约束。
 
