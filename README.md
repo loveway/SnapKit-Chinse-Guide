@@ -1,6 +1,6 @@
 # SnapKit 中文文档翻译
 
-![SnapKit]=](https://camo.githubusercontent.com/31e716ea5f9dcf84442b4a908c4751e39f45aa47/687474703a2f2f736e61706b69742e696f2f696d616765732f62616e6e65722e6a7067)
+![SnapKit](https://camo.githubusercontent.com/31e716ea5f9dcf84442b4a908c4751e39f45aa47/687474703a2f2f736e61706b69742e696f2f696d616765732f62616e6e65722e6a7067)
 
 [SnapKit](https://github.com/SnapKit/SnapKit) 
 
